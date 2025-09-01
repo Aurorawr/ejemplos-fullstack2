@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage vs Session Storage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div id="user-form" class="row">
+        <div class="col-12 col-md-6">
+          <label for="user-name" class="form-label">Nombre</label>
+          <input id="user-name" type="text" class="form-control" />
+        </div>
+        <div class="col-12 col-md-3 d-flex align-items-end">
+          <button id="save-local-btn" class="btn btn-primary">Guardar en LocalStorage</button>
+        </div>
+        <div class="col-12 col-md-3 d-flex align-items-end">
+          <button id="save-session-btn" class="btn btn-secondary">Guardar en SessionStorage</button>
+        </div>
+      </div>
+      <div id="user-content" class="card d-none mt-5">
+        <div class="card-body">
+          <h5 id="user-title" class="card-title">-</h5>
+          <p id="user-message" class="card-text">-</p>
+          <a id="clean-storage-btn" href="#" class="btn btn-primary">Limpiar nombre de storage</a>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
