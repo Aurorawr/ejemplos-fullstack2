@@ -28,7 +28,7 @@ const saveInStorage = (storageType) => {
     localStorage.setItem(NAME_KEY, name);
     
   } else if (storageType === 'session') {
-    localStorage.setItem(NAME_KEY, name);
+    sessionStorage.setItem(NAME_KEY, name);
   } else {
     alert('Tipo de almacenamiento no soportado');
     return;
