@@ -41,6 +41,8 @@ export function getProducts() {
 
   // Las promesas (Promise) son una forma de manejar operaciones asincrónicas en JavaScript.
   return new Promise((resolve) => {
+    // setTimeout nos ayuda a realizar una acción después de pasados los milisegundos indicados
+    // (1000 en este ejemplo, que equivale a 1 segundo)
     return setTimeout(() => {
       resolve(products);
     }, 1000);
@@ -49,12 +51,15 @@ export function getProducts() {
 
 export function getProductById(id) {
   return new Promise((resolve, reject) => {
+    // find es un operador de listas que nos permite encontrar un elemento dada una condición
     const product = products.find((p) => p.id === parseInt(id));
     if (product) {
       return setTimeout(() => {
+        // resolve indica que la promesa se desarrolló correctamente
         resolve(product);
       }, 1000);
     } else {
+      // resolve indica que la promesa se falló
       reject(new Error("Producto no encontrado"));
     }
   });

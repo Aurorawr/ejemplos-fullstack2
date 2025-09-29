@@ -8,6 +8,8 @@ import { ROUTE_PATHS } from "../utils/constants";
 
 function SignIn() {
   let navigate = useNavigate();
+  // Por cada input que quiero tener en mi aplicación, se debe declarar una variable
+  // de estado con useState. Aquí va una para el username y otro para la contraseña.
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -15,6 +17,7 @@ function SignIn() {
   const { isLogged, signIn } = useSession();
 
   useEffect(() => {
+    // Si detecto que está loggeado, lo redirijo al home
     if (isLogged) {
       navigate(ROUTE_PATHS.HOME);
     }

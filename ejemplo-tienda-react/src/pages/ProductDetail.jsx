@@ -5,6 +5,7 @@ import Loading from "../components/Loading";
 import ProductCard from "../components/ProductCard";
 
 function ProductDetail() {
+  // useParams nos permite ingresar a los path params declarados en la ruta
   let { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -20,6 +21,8 @@ function ProductDetail() {
       setLoading(false);
     });
   }, [id]);
+
+  // Puedo retornar más de un html de acuerdo a ciertas condiciones
 
   if (loading) {
     return <Loading />;

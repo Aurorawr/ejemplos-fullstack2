@@ -60,6 +60,7 @@ function Layout() {
         </Navbar>
       </header>
       <Container className="my-4 flex-fill">
+        {/* Outlet nos permite renderizar los componentes hijos que está definidos en la ruta */}
         <Outlet />
       </Container>
       <footer className="bg-primary text-white text-center py-3 mt-auto">

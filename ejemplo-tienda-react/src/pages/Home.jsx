@@ -7,7 +7,9 @@ import { useNavigate, useSearchParams } from "react-router";
 import { ROUTE_PARAMS, ROUTE_PATHS } from "../utils/constants";
 
 function Home() {
+  // useNavigate nos permite redirigir manualmente a nuestras páginas. Pertenece a React Router
   let navigate = useNavigate();
+  // useSearchParams nos permite acceder a los query params de la url
   let [searchParams] = useSearchParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,6 +25,7 @@ function Home() {
   }, []);
 
   const goToProductDetail = (id) => {
+    // Redirigimos manualmente a esta ruta
     navigate(ROUTE_PATHS.PRODUCT_DETAIL_WITH_ID(id));
   };
 
@@ -33,6 +36,9 @@ function Home() {
       <hr />
       <Container>
         <Row className="align-items-stretch">
+          {/* Operador ternario: si la primera condición (loadinf en este caso) es true,
+          renderizo el primer componente (el que está entre el ? y el :), y en caso contrario
+          el segundo (el que está después de los :) */}
           {loading ? (<Loading />) : (
             products.filter(p => !searchParams.get(ROUTE_PARAMS.SEARCH) || p.name.toLowerCase().includes(searchParams.get(ROUTE_PARAMS.SEARCH).toLowerCase()))
             .map((product) => <Col key={product.id} xs={12} sm={6} md={4} className="mb-4">

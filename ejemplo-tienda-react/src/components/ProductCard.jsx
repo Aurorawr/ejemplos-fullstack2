@@ -3,6 +3,7 @@ import { NavLink } from "react-router";
 import { ROUTE_PATHS } from "../utils/constants";
 import { formatPrice } from "../utils/formatters";
 
+// Los props también pueden ser funciones. En este caso, el prop action es una función.
 function ProductCard({ name, price, description, image, action=undefined, actionName="Ver" }) {
 
   return (
